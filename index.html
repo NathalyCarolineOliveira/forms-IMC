@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms IMC</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+
+
+
+        function click_calcular() {
+            let peso = document.getElementById("txtPeso").value;
+            let altura = document.getElementById("txtAltura").value;
+            if (peso == "") {
+                alert("Informe o peso");
+            } else if (altura == "") {
+                alert("Informe o altura");
+            } else {
+                let resultado = Number(peso) / (Number(altura) * Number(altura));
+                document.getElementById("txtResul").value = resultado;
+
+            }
+        }
+
+        function click_limpar() {
+            document.getElementById("txtPeso").value = "";
+            document.getElementById("txtAltura").value = "";
+            document.getElementById("txtResul").value = "";
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="tit">
+        Calculadora do IMC
+    </h1>
+
+    <form>
+        <div>
+            <label for="txtPeso">peso</label>
+            <input type="number" name="" id="txtPeso">
+        </div>
+        <div>
+            <label for="txtAltura">altura</label>
+            <input type="number" name="" id="txtAltura">
+        </div>
+        <div>
+            <label for="txtResul">Resultado: </label>
+            <input type="number" name="" id="txtResul" disabled>
+        </div>
+        <div>
+            <input type="button" value="Calcular" onclick="click_calcular();">
+
+            <input type="button" value="Limpar" onclick="click_limpar();">
+        </div>
+    </form>
+
+
+
+</body>
+
+</html>
